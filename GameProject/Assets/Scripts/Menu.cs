@@ -15,35 +15,41 @@ public class Menu : MonoBehaviour {
 		
 	}*/
 
-    public void SendToCargarPartida () {
-        SceneManager.LoadScene(1);
-    }
-    public void SendToOptionMenu() {
-        SceneManager.LoadScene(2);
-    }
-
-    public void SendToNuevaPartida() {
-        SceneManager.LoadScene(3);
-    }
-
-    public void SendToMenu() {
+    public void SendToMenu()
+    {
         SceneManager.LoadScene(0);
     }
 
-    public void SendToPartida() {
+    public void SendToCargarPartida () {
+        SceneManager.LoadScene(1);
+    }
+
+    public void SendToOptionMenu() {
+        SceneManager.LoadScene(2);
+    }
+    
+    public void SendToCrearPartida() { 
+        SceneManager.LoadScene(3);
+    }
+
+    public void SendToLogin()
+    {
         SceneManager.LoadScene(4);
     }
 
-    public void SendToCrearPartida() { 
+    public void SendToNivel1()
+    {
         SceneManager.LoadScene(5);
     }
-    public void Partida2()
-    {
-        SceneManager.LoadScene(7);
-    }
-    public void login()
+
+    public void SendToTutorial()
     {
         SceneManager.LoadScene(6);
+    }
+
+    public void SendToNivel2()
+    {
+        SceneManager.LoadScene(7);
     }
 }
 

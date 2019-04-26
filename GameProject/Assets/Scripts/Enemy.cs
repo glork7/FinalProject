@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
 
     public GameObject deathEffect;
     public GameObject impactEffect;
+    public GameObject shoot;
     public GameObject item;
     public GameObject test;
 
@@ -29,7 +30,7 @@ public class Enemy : MonoBehaviour
         Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
 
-        if (Random.Range(0, 100) <= 37)
+        if (Random.Range(0, 100) <= 100)
         {
             Object.Instantiate(item, transform.position, Quaternion.identity);
         }

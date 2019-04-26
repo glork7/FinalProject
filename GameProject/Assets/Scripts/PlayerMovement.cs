@@ -19,33 +19,38 @@ public class PlayerMovement : MonoBehaviour {
 
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
-        if (Input.GetButtonDown("Jump"))
-        {
+        if (Input.GetButtonDown("Jump")) {
             jump = true;
             animator.SetBool("IsJumping", true);
         }
-        if (Input.GetButtonDown("Crouch"))
-        {
+        if (Input.GetButtonDown("Crouch")) {
             crouch = true;
-        }else if (Input.GetButtonUp("Crouch"))
-        {
+        }else if (Input.GetButtonUp("Crouch")) {
             crouch = false;
         }
     }
-
-    public void OnLanding()
+    void OnTriggerEnter2D(Collider2D other)
     {
+        //Check the provided Collider2D parameter other to see if it is tagged "PickUp", if it is...
+        if (other.gameObject.CompareTag("PickUp"))
+        {
+            other.gameObject.SetActive(false);
+        }
+    }
+
+    public void OnLanding() {
         animator.SetBool("IsJumping", false);
     }
 
-    public void OnCrouching(bool IsCrouching)
-    {
+    public void OnCrouching(bool IsCrouching) {
         animator.SetBool("IsCrouching", IsCrouching);
     }
-    void FixedUpdate ()
-    {
+
+    void FixedUpdate () {
         //Move our character
         controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
         jump = false;
     }
+
+    
 }

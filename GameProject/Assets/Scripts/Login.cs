@@ -2,14 +2,19 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Text;
+using System;
+using System.Security.Cryptography;
 
 public class Login : MonoBehaviour {
     public GameObject username;
     public GameObject password;
+    public static string gUsername;
     private string Username;
     private string Password;
     private string[] Lines;
     private string DecryptedPassword;
+    public static int TPuntuation, L1Puntuation, L2Puntuation;
 
     public void LoginButton() {
         bool UN = false;
@@ -19,6 +24,8 @@ public class Login : MonoBehaviour {
             if (System.IO.File.Exists(@"C:/UnityTestFolder/" + Username + ".txt")) {
                 UN = true;
                 Lines = System.IO.File.ReadAllLines(@"C:/UnityTestFolder/" + Username + ".txt");
+                gUsername = Username;
+                print(gUsername);
             } else {
                 Debug.LogWarning("Username Invalid.");
             }
@@ -34,7 +41,10 @@ public class Login : MonoBehaviour {
                     char Decrypted = (char)(c / 1);
                     DecryptedPassword += Decrypted.ToString();
                 }
-                if(Password == DecryptedPassword) {
+                byte[] data = System.Text.Encoding.ASCII.GetBytes(Password);
+                data = new System.Security.Cryptography.SHA256Managed().ComputeHash(data);
+                String hash = System.Text.Encoding.ASCII.GetString(data);
+                if (hash == DecryptedPassword) {
                     PW = true;
                 } else {
                     Debug.LogWarning("Password is invalid.");
@@ -49,11 +59,14 @@ public class Login : MonoBehaviour {
             username.GetComponent<InputField>().text = "";
             password.GetComponent<InputField>().text = "";
             print("Login Succesful");
+
+
             SceneManager.LoadScene(0);
         }
     }
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
         if (Input.GetKeyDown(KeyCode.Tab)) {
             if (username.GetComponent<InputField>().isFocused) {
                 password.GetComponent<InputField>().Select();
