@@ -9,6 +9,7 @@ TagManager:
   - EnemyTouch
   - PickUpDiamond
   - PickUpHealth
+  - PickUpFinal
   layers:
   - Default
   - TransparentFX

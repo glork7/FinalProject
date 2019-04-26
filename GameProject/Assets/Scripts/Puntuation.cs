@@ -10,8 +10,8 @@ public class Puntuation : MonoBehaviour {
     public static int Level2P = Login.L2Puntuation;
 
     private string Username = Login.gUsername;
-    private string Password = Register.gPassword;
-    private string Email = Register.gEmail;
+    private string Password = Login.gPassword;
+    private string Email = Login.gEmail;
     private string form;
 
     

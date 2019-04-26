@@ -14,9 +14,7 @@ public class Register : MonoBehaviour
     public GameObject confirmPassword;
     private string Username;
     private string Email;
-    public static string gEmail;
     private string Password;
-    public static string gPassword;
     private string ConfirmPassword;
     private string form;
     private bool EmailValid = false;
@@ -51,7 +49,6 @@ public class Register : MonoBehaviour
                 if(Email.Contains("@")){
                     if (Email.Contains(".")){
                         EM = true;
-                        gEmail = Email;
                     } else {
                         Debug.LogWarning("Email is Incorrect.");
                     }
@@ -105,10 +102,10 @@ public class Register : MonoBehaviour
             byte[] data = System.Text.Encoding.ASCII.GetBytes(Password);
             data = new System.Security.Cryptography.SHA256Managed().ComputeHash(data);
             String hash = System.Text.Encoding.ASCII.GetString(data);
-            gPassword = hash;
             form = (Username + Environment.NewLine + Email + Environment.NewLine + hash
             + Environment.NewLine + Puntuation.TutoriaP + Environment.NewLine + Puntuation.Level1P
             + Environment.NewLine + Puntuation.Level2P);
+
             System.IO.File.WriteAllText(@"C:/UnityTestFolder/" + Username + ".txt", form);
             username.GetComponent<InputField>().text = "";
             email.GetComponent<InputField>().text = "";

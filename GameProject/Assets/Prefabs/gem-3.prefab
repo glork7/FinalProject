@@ -23,7 +23,6 @@ GameObject:
   - component: {fileID: 95233981607077022}
   - component: {fileID: 50871136977951176}
   - component: {fileID: 58560337202456760}
-  - component: {fileID: 114593660281055648}
   - component: {fileID: 61862600267767618}
   m_Layer: 0
   m_Name: gem-3
@@ -123,17 +122,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114593660281055648
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1377527980995594}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f827c583e000e674980089ada483e66f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &212960910604622054
 SpriteRenderer:
   m_ObjectHideFlags: 1

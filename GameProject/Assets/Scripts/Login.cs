@@ -12,6 +12,8 @@ public class Login : MonoBehaviour {
     public static string gUsername;
     private string Username;
     private string Password;
+    public static string gPassword;
+    public static string gEmail;
     private string[] Lines;
     private string DecryptedPassword;
     public static int TPuntuation, L1Puntuation, L2Puntuation;
@@ -25,17 +27,22 @@ public class Login : MonoBehaviour {
                 UN = true;
                 Lines = System.IO.File.ReadAllLines(@"C:/UnityTestFolder/" + Username + ".txt");
                 gUsername = Username;
-                print(gUsername);
             } else {
                 Debug.LogWarning("Username Invalid.");
             }
         } else {
             Debug.LogWarning("Username Field Empty.");
         }
-
+        
         if (Password != "") {
             if(System.IO.File.Exists(@"C:/UnityTestFolder/" + Username + ".txt")) {
                 int i = 1;
+                foreach (char c in Lines[1])
+                {
+                    i++;
+                    char Decrypted = (char)(c / 1);
+                    gEmail += Decrypted.ToString();
+                }
                 foreach (char c in Lines[2]) {
                     i++;
                     char Decrypted = (char)(c / 1);
@@ -44,6 +51,7 @@ public class Login : MonoBehaviour {
                 byte[] data = System.Text.Encoding.ASCII.GetBytes(Password);
                 data = new System.Security.Cryptography.SHA256Managed().ComputeHash(data);
                 String hash = System.Text.Encoding.ASCII.GetString(data);
+                gPassword = hash;
                 if (hash == DecryptedPassword) {
                     PW = true;
                 } else {

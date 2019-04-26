@@ -1,5 +1,6 @@
 ﻿
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class Enemy : MonoBehaviour
     public GameObject shoot;
     public GameObject item;
     public GameObject test;
-
+    private int sceneNumber;
 
     public void TakeDamage(int damage)
     {
@@ -26,16 +27,14 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Die()
     {
-
         Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
 
-        if (Random.Range(0, 100) <= 100)
+        if (Random.Range(0, 100) <= 37)
         {
             Object.Instantiate(item, transform.position, Quaternion.identity);
         }
-
-
+        
     }
 
 

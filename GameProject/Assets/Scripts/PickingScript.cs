@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PickingScript : MonoBehaviour
 {
@@ -13,6 +14,10 @@ public class PickingScript : MonoBehaviour
         else if(collision.gameObject.CompareTag("PickUpDiamond"))
         {
             DController.diamond += 1;
+        }
+        else if (collision.gameObject.CompareTag("PickUpFinal"))
+        {
+            SceneManager.LoadScene(1);
         }
         else
         {
