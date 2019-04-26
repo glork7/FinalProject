@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 61609263881638774}
   m_Layer: 0
   m_Name: cherry-7 1
-  m_TagString: PickUp
+  m_TagString: PickUpHealth
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,7 +134,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d544b22940d2ceb46a636f05fe8677d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  returnMana: 50
 --- !u!212 &212754472604226364
 SpriteRenderer:
   m_ObjectHideFlags: 1

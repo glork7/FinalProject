@@ -24,9 +24,10 @@ GameObject:
   - component: {fileID: 50871136977951176}
   - component: {fileID: 58560337202456760}
   - component: {fileID: 114593660281055648}
+  - component: {fileID: 61862600267767618}
   m_Layer: 0
   m_Name: gem-3
-  m_TagString: Untagged
+  m_TagString: PickUpDiamond
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1377527980995594}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.836981, y: -0.7585703, z: 0}
+  m_LocalPosition: {x: 92.84331, y: -3.8451142, z: 0}
   m_LocalScale: {x: 6.2, y: 6.2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -63,9 +64,24 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &58560337202456760
 CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1377527980995594}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0005285394, y: 0.0031711403}
+  serializedVersion: 2
+  m_Radius: 0.054387413
+--- !u!61 &61862600267767618
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -76,9 +92,19 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0005285394, y: 0.0031711403}
+  m_Offset: {x: 0.00008603046, y: -0.055342082}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.15, y: 0.13}
+    newSize: {x: 0.15, y: 0.13}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.054387413
+  m_Size: {x: 0.01033906, y: 0.0014546737}
+  m_EdgeRadius: 0
 --- !u!95 &95233981607077022
 Animator:
   serializedVersion: 3

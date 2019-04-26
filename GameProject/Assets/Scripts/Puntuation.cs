@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Puntuation : MonoBehaviour {
 
-    public static int TutoriaP = 5;
+    public static int TutoriaP = Login.TPuntuation;
     public static int Level1P = Login.L1Puntuation;
     public static int Level2P = Login.L2Puntuation;
 
@@ -22,9 +22,6 @@ public class Puntuation : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        print(Username);
-        print(Password);
-        print(Email);
 
         if (System.IO.File.Exists(@"C:/UnityTestFolder/" + Username + ".txt"))
         {
