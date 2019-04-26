@@ -102,9 +102,10 @@ public class Register : MonoBehaviour
             byte[] data = System.Text.Encoding.ASCII.GetBytes(Password);
             data = new System.Security.Cryptography.SHA256Managed().ComputeHash(data);
             String hash = System.Text.Encoding.ASCII.GetString(data);
-            form = (Username + Environment.NewLine + Email + Environment.NewLine + hash
-            + Environment.NewLine + Puntuation.TutoriaP + Environment.NewLine + Puntuation.Level1P
-            + Environment.NewLine + Puntuation.Level2P);
+            form = (Username + Environment.NewLine + Email + Environment.NewLine + hash + Environment.NewLine +
+            Puntuation.TutoriaPEasy + Environment.NewLine + Puntuation.Level1PEasy + Environment.NewLine +
+            Puntuation.Level2PEasy + Environment.NewLine + Puntuation.TutoriaPNormal + Environment.NewLine +
+            Puntuation.Level1PNormal + Environment.NewLine + Puntuation.Level2PNormal);
 
             System.IO.File.WriteAllText(@"C:/UnityTestFolder/" + Username + ".txt", form);
             username.GetComponent<InputField>().text = "";

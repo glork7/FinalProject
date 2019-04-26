@@ -16,7 +16,8 @@ public class Login : MonoBehaviour {
     public static string gEmail;
     private string[] Lines;
     private string DecryptedPassword;
-    public static int TPuntuation, L1Puntuation, L2Puntuation;
+    public static int TPuntuationEasy = 30, L1PuntuationEasy = 40, L2PuntuationEasy = 50;
+    public static int TPuntuationNormal = 60, L1PuntuationNormal = 80, L2PuntuationNormal = 100;
 
     public void LoginButton() {
         bool UN = false;

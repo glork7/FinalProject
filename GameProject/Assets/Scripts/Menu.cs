@@ -51,5 +51,15 @@ public class Menu : MonoBehaviour {
     {
         SceneManager.LoadScene(7);
     }
+
+    public void SelectDificult()
+    {
+        SceneManager.LoadScene(8);
+    }
+
+    public void Easy()
+    {
+        SceneManager.LoadScene(9);
+    }
 }
 

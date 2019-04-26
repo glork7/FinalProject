@@ -5,9 +5,12 @@ using UnityEngine;
 
 public class Puntuation : MonoBehaviour {
 
-    public static int TutoriaP = Login.TPuntuation;
-    public static int Level1P = Login.L1Puntuation;
-    public static int Level2P = Login.L2Puntuation;
+    public static int TutoriaPEasy = Login.TPuntuationEasy;
+    public static int Level1PEasy = Login.L1PuntuationEasy;
+    public static int Level2PEasy = Login.L2PuntuationEasy;
+    public static int TutoriaPNormal = Login.TPuntuationNormal;
+    public static int Level1PNormal = Login.L1PuntuationNormal;
+    public static int Level2PNormal = Login.L2PuntuationNormal;
 
     private string Username = Login.gUsername;
     private string Password = Login.gPassword;
@@ -25,8 +28,10 @@ public class Puntuation : MonoBehaviour {
 
         if (System.IO.File.Exists(@"C:/UnityTestFolder/" + Username + ".txt"))
         {
-            form = (Username + Environment.NewLine + Email + Environment.NewLine + Password + Environment.NewLine + Puntuation.TutoriaP + Environment.NewLine + Puntuation.Level1P
-            + Environment.NewLine + Puntuation.Level2P);
+            form = (Username + Environment.NewLine + Email + Environment.NewLine + Password + Environment.NewLine + 
+            Puntuation.TutoriaPEasy + Environment.NewLine + Puntuation.Level1PEasy + Environment.NewLine + 
+            Puntuation.Level2PEasy + Environment.NewLine + Puntuation.TutoriaPNormal + Environment.NewLine + 
+            Puntuation.Level1PNormal + Environment.NewLine + Puntuation.Level2PNormal);
             System.IO.File.WriteAllText(@"C:/UnityTestFolder/" + Username + ".txt", form);
         }
     }
