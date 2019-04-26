@@ -30,7 +30,7 @@ public class Enemy : MonoBehaviour
         Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
 
-        if (Random.Range(0, 100) <= 37)
+        if (Random.Range(0, 100) <= 100)
         {
             Object.Instantiate(item, transform.position, Quaternion.identity);
         }

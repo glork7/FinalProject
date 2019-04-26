@@ -17,7 +17,7 @@ public class Menu : MonoBehaviour {
 
     public void SendToMenu()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(4);
     }
 
     public void SendToCargarPartida () {
@@ -34,7 +34,7 @@ public class Menu : MonoBehaviour {
 
     public void SendToLogin()
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(0);
     }
 
     public void SendToNivel1()
@@ -60,6 +60,11 @@ public class Menu : MonoBehaviour {
     public void Easy()
     {
         SceneManager.LoadScene(9);
+    }
+
+    public void MenurTutorial()
+    {
+        SceneManager.LoadScene(10);
     }
 }
 

@@ -70,7 +70,7 @@ public class Login : MonoBehaviour {
             print("Login Succesful");
 
 
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(4);
         }
     }
 
