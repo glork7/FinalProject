@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu Game Tutorial.unity
     guid: 334f3d6751a43c74eb8ec05950bd049b
+  - enabled: 1
+    path: Assets/Scenes/Dungeon.unity
+    guid: 3de106286c1706a4e9312d33ca8b4167
   m_configObjects: {}

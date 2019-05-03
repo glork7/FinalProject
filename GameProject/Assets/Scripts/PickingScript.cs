@@ -19,6 +19,14 @@ public class PickingScript : MonoBehaviour
         {
             SceneManager.LoadScene(1);
         }
+        else if (collision.gameObject.CompareTag("PickUpSecret"))
+        {
+            SceneManager.LoadScene(11);
+        }
+        else if (collision.gameObject.CompareTag("EnemyTouch"))
+        {
+            HealthController.health -= 1;
+        }
         else
         {
             HealthController.health -= 1;

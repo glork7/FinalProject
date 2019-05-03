@@ -1158,7 +1158,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4586568592033332, guid: cd126e32dd2143b4392724bafae7ea2c, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 16.990002
+      value: 13.93
       objectReference: {fileID: 0}
     - target: {fileID: 4586568592033332, guid: cd126e32dd2143b4392724bafae7ea2c, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1217,6 +1217,15 @@ Prefab:
         type: 2}
       propertyPath: m_SortingOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033970223668516, guid: cd126e32dd2143b4392724bafae7ea2c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -7.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 20130735520746630, guid: cd126e32dd2143b4392724bafae7ea2c,
+        type: 2}
+      propertyPath: orthographic size
+      value: 7.258568
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd126e32dd2143b4392724bafae7ea2c, type: 2}
@@ -1799,6 +1808,10 @@ Prefab:
     - target: {fileID: 1952826575911178, guid: 7bb57505cdd564b469793207214d7215, type: 2}
       propertyPath: m_Name
       value: Rat_
+      objectReference: {fileID: 0}
+    - target: {fileID: 1952826575911178, guid: 7bb57505cdd564b469793207214d7215, type: 2}
+      propertyPath: m_TagString
+      value: EnemyTouch
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bb57505cdd564b469793207214d7215, type: 2}
@@ -21622,7 +21635,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4885268854825230, guid: d4116c001bbdae446afaa6735d6e2d1a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 11.2
+      value: 8.139998
       objectReference: {fileID: 0}
     - target: {fileID: 4885268854825230, guid: d4116c001bbdae446afaa6735d6e2d1a, type: 2}
       propertyPath: m_LocalPosition.y

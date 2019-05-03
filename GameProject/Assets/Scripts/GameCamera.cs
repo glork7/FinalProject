@@ -7,6 +7,7 @@ public class GameCamera : MonoBehaviour {
 
 
     private Vector3 offset;         //Private variable to store the offset distance between the player and camera
+    private int speed;
 
     // Use this for initialization
     void Start()
@@ -21,4 +22,6 @@ public class GameCamera : MonoBehaviour {
         // Set the position of the camera's transform to be the same as the player's, but offset by the calculated offset distance.
         transform.position = player.transform.position + offset;
     }
+
+    
 }

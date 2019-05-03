@@ -99,9 +99,16 @@ public class Register : MonoBehaviour
             }
             //Password Encryptment
 
+
+
             byte[] data = System.Text.Encoding.ASCII.GetBytes(Password);
             data = new System.Security.Cryptography.SHA256Managed().ComputeHash(data);
             String hash = System.Text.Encoding.ASCII.GetString(data);
+
+
+
+
+
             form = (Username + Environment.NewLine + Email + Environment.NewLine + hash + Environment.NewLine +
             Puntuation.TutoriaPEasy + Environment.NewLine + Puntuation.Level1PEasy + Environment.NewLine +
             Puntuation.Level2PEasy + Environment.NewLine + Puntuation.TutoriaPNormal + Environment.NewLine +
