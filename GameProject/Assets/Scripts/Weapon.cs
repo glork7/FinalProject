@@ -7,21 +7,34 @@ public class Weapon : MonoBehaviour {
     public GameObject DefaultBulletPrefab;
     public GameObject FireBulletPrefab;
     public GameObject FireGreenBulletPrefab;
-    public float defaultFireRate;
-    public float fireRate;
-    public float greenFireRate;
+    private float defaultFireRate = 0.3f;
+    private float fireRate = 0.5f;
+    private float greenFireRate = 0.7f;
     private float nextFire;
-    public int defaultMana = 100;
-    public int mana = 100;
-    public bool fireShoot = false;
-    public bool greenFireShoot = false;
-    public bool defaultShoot = true;
-    public int fireShootMana = 15;
-    public int greenFireShootMana = 25;
-    public int defaultShootMana = 10;
+    private int defaultMana = 100;
+    private int mana = 100;
+    private bool fireShoot = false;
+    private bool greenFireShoot = false;
+    private bool defaultShoot = true;
+    private int fireShootMana = 15;
+    private int greenFireShootMana = 25;
+    private int defaultShootMana = 10;
     // Update is called once per frame
     
     void Update () {
+        if (Menu.Facil == true)
+        {
+            fireShootMana = 0;
+            greenFireShootMana = 0;
+            defaultShootMana = 0;
+
+        }else if(Menu.Normal == true)
+        {
+            fireShootMana = 15;
+            greenFireShootMana = 25;
+            defaultShootMana = 10;
+        }
+
         if (mana > defaultMana)
         {
             mana = defaultMana;
@@ -48,20 +61,42 @@ public class Weapon : MonoBehaviour {
             if (defaultShoot == true)
             {
                 mana = mana + defaultShootMana;
-                nextFire = Time.time + defaultFireRate;
+                if (Menu.Facil == true)
+                {
+                    nextFire = Time.time + defaultFireRate - 0.15f;
+                }
+                else if (Menu.Normal == true)
+                {
+                    nextFire = Time.time + defaultFireRate;
+                }
+                
                 Shoot1();
                 
             }
             else if (fireShoot == true && mana >= fireShootMana)
             {
                 mana = mana - fireShootMana;
-                nextFire = Time.time + fireRate;
+                if (Menu.Facil == true)
+                {
+                    nextFire = Time.time + fireRate - 0.15f;
+                }
+                else if (Menu.Normal == true)
+                {
+                    nextFire = Time.time + fireRate;
+                }
                 Shoot2();                
             }
             else if(greenFireShoot == true && mana >= greenFireShootMana)
             {
                 mana = mana - greenFireShootMana;
-                nextFire = Time.time + greenFireRate;
+                if (Menu.Facil == true)
+                {
+                    nextFire = Time.time + greenFireRate - 0.15f;
+                }
+                else if (Menu.Normal == true)
+                {
+                    nextFire = Time.time + greenFireRate;
+                }
                 Shoot3();                
             }
         }

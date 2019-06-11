@@ -11,6 +11,11 @@ TagManager:
   - PickUpHealth
   - PickUpFinal
   - PickUpSecret
+  - Return
+  - PlayerShoot
+  - EnemyShootEnemy
+  - PickUpFinal2
+  - PickUpFinal1
   layers:
   - Default
   - TransparentFX

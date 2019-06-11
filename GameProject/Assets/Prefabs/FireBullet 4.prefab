@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114597320627165696}
   m_Layer: 0
   m_Name: FireBullet 4
-  m_TagString: Untagged
+  m_TagString: PlayerPick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

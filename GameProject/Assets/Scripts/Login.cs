@@ -10,14 +10,13 @@ public class Login : MonoBehaviour {
     public GameObject username;
     public GameObject password;
     public static string gUsername;
-    private string Username;
+    public static string Username;
     private string Password;
     public static string gPassword;
     public static string gEmail;
+    public Text uL, pL;
     private string[] Lines;
     private string DecryptedPassword;
-    public static int TPuntuationEasy = 30, L1PuntuationEasy = 40, L2PuntuationEasy = 50;
-    public static int TPuntuationNormal = 60, L1PuntuationNormal = 80, L2PuntuationNormal = 100;
 
     public void LoginButton() {
         bool UN = false;
@@ -26,12 +25,15 @@ public class Login : MonoBehaviour {
         if(Username != "") {
             if (System.IO.File.Exists(@"C:/UnityTestFolder/" + Username + ".txt")) {
                 UN = true;
+                uL.text = "";
                 Lines = System.IO.File.ReadAllLines(@"C:/UnityTestFolder/" + Username + ".txt");
                 gUsername = Username;
             } else {
+                uL.text = "Username Invalid";
                 Debug.LogWarning("Username Invalid.");
             }
         } else {
+            uL.text = "Username Field Empty";
             Debug.LogWarning("Username Field Empty.");
         }
         
@@ -55,13 +57,17 @@ public class Login : MonoBehaviour {
                 gPassword = hash;
                 if (hash == DecryptedPassword) {
                     PW = true;
+                    pL.text = "";
                 } else {
+                    pL.text = "Password is invalid";
                     Debug.LogWarning("Password is invalid.");
                 }
             } else {
+                pL.text = "Password is invalid";
                 Debug.LogWarning("Password is invalid.");
             }
         } else {
+            pL.text = "Password field Empty";
             Debug.LogWarning("Password field Empty.");
         }
         if (UN == true && PW == true) {

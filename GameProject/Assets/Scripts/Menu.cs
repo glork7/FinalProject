@@ -4,14 +4,12 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour {
 
-    //public Button MyButton = null;
-    // Use this for initialization
-    /*void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    public static bool Facil = false;
+    public static bool Normal = true;
+    private bool pauseEnabled = false;
+
+    // Update is called once per frame
+    /*void Update () {
 		
 	}*/
 
@@ -62,14 +60,38 @@ public class Menu : MonoBehaviour {
         SceneManager.LoadScene(9);
     }
 
-    public void MenurTutorial()
+    public void Ranking()
     {
         SceneManager.LoadScene(10);
     }
-
-    public void Dungeon()
+    public void DificultadFacil()
     {
-        SceneManager.LoadScene(11);
+        Facil = true;
+        Normal = false;
     }
+    public void DificultadNormal()
+    {
+        Normal = true;
+        Facil = false;
+    }
+    public void Pause()
+    {   
+            if (pauseEnabled == false)
+            {
+                Time.timeScale = 0;
+            }
+
+        pauseEnabled = true;
+    }
+    public void UnPause()
+    {
+        if (pauseEnabled == true)
+        {
+            Time.timeScale = 1;
+        }
+
+        pauseEnabled = false;
+    }
+
 }
 

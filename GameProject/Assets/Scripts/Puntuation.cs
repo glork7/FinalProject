@@ -2,37 +2,48 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Puntuation : MonoBehaviour {
 
-    public static int TutoriaPEasy = Login.TPuntuationEasy;
-    public static int Level1PEasy = Login.L1PuntuationEasy;
-    public static int Level2PEasy = Login.L2PuntuationEasy;
-    public static int TutoriaPNormal = Login.TPuntuationNormal;
-    public static int Level1PNormal = Login.L1PuntuationNormal;
-    public static int Level2PNormal = Login.L2PuntuationNormal;
 
-    private string Username = Login.gUsername;
-    private string Password = Login.gPassword;
-    private string Email = Login.gEmail;
-    private string form;
-
-    
+    private static string username = Login.gUsername;
+    private static string password = Login.gPassword;
+    private static string email = Login.gEmail;
+    private static string form;
+    private static string[] Lines;
     // Use this for initialization
     void Start () {
-		
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
+       
+        
+        
+    }
 
-        if (System.IO.File.Exists(@"C:/UnityTestFolder/" + Username + ".txt"))
+    public static void WritePuntuation(int tPuntuation, int puntuation1, int puntuation2)
+    {
+        if(tPuntuation < 0)
         {
-            form = (Username + Environment.NewLine + Email + Environment.NewLine + Password + Environment.NewLine + 
-            Puntuation.TutoriaPEasy + Environment.NewLine + Puntuation.Level1PEasy + Environment.NewLine + 
-            Puntuation.Level2PEasy + Environment.NewLine + Puntuation.TutoriaPNormal + Environment.NewLine + 
-            Puntuation.Level1PNormal + Environment.NewLine + Puntuation.Level2PNormal);
-            System.IO.File.WriteAllText(@"C:/UnityTestFolder/" + Username + ".txt", form);
+            tPuntuation = 0;
         }
+        if (puntuation1 < 0)
+        {
+            puntuation1 = 0;
+        }
+        if (puntuation2 < 0)
+        {
+            puntuation2 = 0;
+        }
+        if (System.IO.File.Exists(@"C:/UnityTestFolder/" + username + ".txt"))
+        {
+            Lines = System.IO.File.ReadAllLines(@"C:/UnityTestFolder/" + username + ".txt");
+            form = (username + Environment.NewLine + email + Environment.NewLine + password + Environment.NewLine +
+            PickingScript.tPuntuation + Environment.NewLine + PickingScript.puntuation1 + Environment.NewLine + PickingScript.puntuation2 
+            + Environment.NewLine + false + Environment.NewLine + Lines[7] + Environment.NewLine + Lines[8]);
+            System.IO.File.WriteAllText(@"C:/UnityTestFolder/" + username + ".txt", form);
+            }
     }
 }

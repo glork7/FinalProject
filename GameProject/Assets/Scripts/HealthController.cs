@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HealthController : MonoBehaviour
 {
@@ -69,7 +70,7 @@ public class HealthController : MonoBehaviour
                 hp3.gameObject.SetActive(false);
                 hp2.gameObject.SetActive(false);
                 hp1.gameObject.SetActive(false);
-                //canvasGameOver.gameObject.SetActive(true);
+                SceneManager.LoadScene(8);
                 break;
         }
     }
